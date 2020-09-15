@@ -9,4 +9,12 @@ public class AddressBookFunctionality implements AddressBookOperations {
         Address address = new Address(firstName, lastName, city, state, zipCode, mobileNo);
         addressArrayList.add(address);
     }
+
+    @Override
+    public void displayAddressBook() {
+        for (Address address : addressArrayList) {
+            System.out.print(address.getFirstName() + " " + address.getLastName() + " " + address.getCity() + " " + address.getState() + " " + address.getZipCode() + " " + address.getPhoneNumber());
+            System.out.println(" ");
+        }
+    }
 }

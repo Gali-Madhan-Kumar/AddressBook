@@ -32,5 +32,7 @@ public class Main {
             mobileNo = input.next();
             addressBookFunctionality.addAddress(firstName, lastName, city, state, zipCode, mobileNo);
         }
+
+        addressBookFunctionality.displayAddressBook();
     }
 }
