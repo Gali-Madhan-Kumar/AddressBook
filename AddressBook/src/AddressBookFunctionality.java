@@ -17,4 +17,18 @@ public class AddressBookFunctionality implements AddressBookOperations {
             System.out.println(" ");
         }
     }
+
+    @Override
+    public void editAddress(String firstName, String city, String state, int zipCode, String mobileNo) {
+        for (Address address : addressArrayList) {
+            if (address.getFirstName().equals(firstName)) {
+                address.setCity(city);
+                address.setState(state);
+                address.setZipCode(zipCode);
+                address.setPhoneNumber(mobileNo);
+            } else {
+                System.out.println("First Name not Found");
+            }
+        }
+    }
 }
