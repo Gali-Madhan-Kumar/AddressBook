@@ -31,4 +31,9 @@ public class AddressBookFunctionality implements AddressBookOperations {
             }
         }
     }
+
+    @Override
+    public void deleteAddress(String firstName) {
+        addressArrayList.removeIf(address -> address.getFirstName().equals(firstName));
+    }
 }

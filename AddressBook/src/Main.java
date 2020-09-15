@@ -55,10 +55,16 @@ public class Main {
                     System.out.println("Enter State to update");
                     state = input.next();
                     System.out.println("Enter ZipCode to update");
-                    zipCode= input.nextInt();
+                    zipCode = input.nextInt();
                     System.out.println("Enter mobile Number to update");
                     mobileNo = input.next();
                     addressBookFunctionality.editAddress(firstName, city, state, zipCode, mobileNo);
+                    break;
+
+                case 3:
+                    System.out.println("Enter First Name of the Person to Delete his/her address");
+                    firstName = input.next();
+                    addressBookFunctionality.deleteAddress(firstName);
                     break;
             }
             addressBookFunctionality.displayAddressBook();
