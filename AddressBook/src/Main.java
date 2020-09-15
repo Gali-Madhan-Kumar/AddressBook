@@ -66,6 +66,10 @@ public class Main {
                     firstName = input.next();
                     addressBookFunctionality.deleteAddress(firstName);
                     break;
+
+                case 4:
+                    addressBookFunctionality.sortByName();
+                    break;
             }
             addressBookFunctionality.displayAddressBook();
             System.out.println("Do you want to continue....[Y|N]");

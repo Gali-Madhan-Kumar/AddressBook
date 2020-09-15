@@ -6,4 +6,6 @@ public interface AddressBookOperations {
     void editAddress(String firstName, String city, String state, int zipCode, String mobileNo);
 
     void deleteAddress(String firstName);
+
+    void sortByName();
 }

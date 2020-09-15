@@ -36,4 +36,25 @@ public class AddressBookFunctionality implements AddressBookOperations {
     public void deleteAddress(String firstName) {
         addressArrayList.removeIf(address -> address.getFirstName().equals(firstName));
     }
+
+    @Override
+    public void sortByName() {
+        for (int i = 0; i < addressArrayList.size() - 1; i++) {
+            for (int j = i + 1; j < addressArrayList.size(); j++) {
+                if (addressArrayList.get(i).getFirstName().equals(addressArrayList.get(j).getFirstName())) {
+                    if (addressArrayList.get(i).getLastName().compareTo(addressArrayList.get(j).getLastName()) > 0) {
+                        Address temp = addressArrayList.get(i);
+                        addressArrayList.set(i, addressArrayList.get(j));
+                        addressArrayList.set(j, temp);
+                    }
+                } else {
+                    if (addressArrayList.get(i).getFirstName().compareTo(addressArrayList.get(j).getFirstName()) < 0) {
+                        Address temp = addressArrayList.get(i);
+                        addressArrayList.set(i, addressArrayList.get(j));
+                        addressArrayList.set(j, temp);
+                    }
+                }
+            }
+        }
+    }
 }
