@@ -70,6 +70,14 @@ public class Main {
                 case 4:
                     addressBookFunctionality.sortByName();
                     break;
+
+                case 5:
+                    addressBookFunctionality.sortByZip();
+                    break;
+
+                default:
+                    System.out.println("Choose the correct option...");
+                    break;
             }
             addressBookFunctionality.displayAddressBook();
             System.out.println("Do you want to continue....[Y|N]");

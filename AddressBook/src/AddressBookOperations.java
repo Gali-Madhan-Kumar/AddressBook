@@ -8,4 +8,6 @@ public interface AddressBookOperations {
     void deleteAddress(String firstName);
 
     void sortByName();
+
+    void sortByZip();
 }

@@ -42,6 +42,9 @@ public class AddressBookFunctionality implements AddressBookOperations {
         for (int i = 0; i < addressArrayList.size() - 1; i++) {
             for (int j = i + 1; j < addressArrayList.size(); j++) {
                 if (addressArrayList.get(i).getFirstName().equals(addressArrayList.get(j).getFirstName())) {
+                    if (addressArrayList.get(i).getLastName().equals(addressArrayList.get(j).getLastName())) {
+                        sortByZip();
+                    }
                     if (addressArrayList.get(i).getLastName().compareTo(addressArrayList.get(j).getLastName()) > 0) {
                         Address temp = addressArrayList.get(i);
                         addressArrayList.set(i, addressArrayList.get(j));
@@ -53,6 +56,19 @@ public class AddressBookFunctionality implements AddressBookOperations {
                         addressArrayList.set(i, addressArrayList.get(j));
                         addressArrayList.set(j, temp);
                     }
+                }
+            }
+        }
+    }
+
+    @Override
+    public void sortByZip() {
+        for (int i = 0 ; i < addressArrayList.size() - 1; i++) {
+            for (int j = i + 1; j < addressArrayList.size(); j++) {
+                if (addressArrayList.get(i).getZipCode() > addressArrayList.get(j).getZipCode()) {
+                    Address temp = addressArrayList.get(i);
+                    addressArrayList.set(i, addressArrayList.get(j));
+                    addressArrayList.set(j, temp);
                 }
             }
         }
